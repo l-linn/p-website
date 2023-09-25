@@ -1,0 +1,319 @@
+/*
+colour:
+#D2E4D6
+#00A871
+#1B3D2F
+#00B5FF
+*/
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  5. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  6. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+/*
+  7. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+/*
+  8. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+
+:root {
+    --mian-color: #1b3d2f;
+    --text-color--light: #f8f7f2;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    color: var(--mian-color);
+    font-family: 'Lato', sans-serif;
+    line-height: 1.5;
+}
+
+.header-grid {
+    color: var(--mian-color);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+    font-size: 16px;
+    padding: 10px;
+
+    img {
+        display: block;
+        width: 300px;
+        margin-inline: auto;
+    }
+
+    &__item {
+        &__item:first-child {
+            justify-self: start;
+        }
+
+        &:nth-child(2){
+            justify-self: center;
+        }
+    }
+
+    @media all and (min-width: 600px) {
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+    }
+}
+
+h2 {
+    text-align: center;
+    font-size: clamp(22px, 26px, 28px);
+}
+
+p {
+    font-size: clamp(14px, 16px, 18px);
+}
+
+a {
+    text-decoration: none;
+    color: var(--mian-color);
+    
+    &:visited {
+        color: var(--mian-color);
+    }
+    &:hover {
+        color: #00A871;
+    }
+
+    &:active {
+        color: #00B5FF;
+    }
+}
+
+.profile-container {
+    color: var(--mian-color);
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    margin-top: 10px;
+
+    .profile-grid__item {
+        justify-self: center;
+        text-align: center;
+    }
+
+    @media all and (min-width: 600px) {
+        grid-template-columns: 1fr 1.5fr;
+        grid-gap: 30px;
+        width: clamp(600px, 60%, 800px);
+        justify-items: center;
+        margin-inline: auto;
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+
+    h1 {
+        font-size: 32px;
+        overflow: hidden;
+        white-space: nowrap;
+        animation: typing 2s steps(30, end) forwards, blinking 1s infinite;
+        border-right: 1px solid;
+    }
+
+    .typy-animation {
+        display: inline-block;
+        width: max-content;
+    }
+
+    @keyframes typing {
+        from {width: 0;}
+        to {width: 100%;}
+    }
+    
+    @keyframes blinking {
+        0% {border-right-color: transparent}
+        50% {border-right-color: var(--primary-color)}
+        100% {border-right-color: transparent}
+    }
+
+    .profile-pic {
+        object-fit: cover;
+        width: 100%;
+        min-width: 150px;
+        max-width: 200px;
+        border-radius: 10%;
+        margin-inline: auto;
+    }
+}
+
+.skills-container {
+    opacity: .8;
+    margin-top: 10px;
+    padding: 10px 0;
+    background-color: var(--text-color--light);
+    color: var(--mian-color);
+    line-height: 1.2;
+
+    .skills-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+        padding: 10px;
+        width: max(65%, 350px);
+        margin-inline: auto;
+    
+        .flex-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+}
+
+.projects-container {
+    opacity: .8;
+    padding: 20px;
+
+    .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(1fr);
+        grid-gap: 20px;
+
+        @media all and (min-width: 550px) {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        @media all and (min-width: 900px) {
+                grid-template-columns: 1fr 1fr 1fr;
+        }
+    
+        &__item{
+            border-radius: 10px;
+            padding: 10px;
+
+            img {
+                object-fit: cover;
+                width: 100%;
+            }
+
+            &:first-child {
+                background-color: #E8F3F5;
+            }
+
+            &:nth-child(2) {
+                background-color: #EBF3E9;
+            }
+
+            &:last-child {
+                background-color: #fbfbd7;
+            }
+        }
+    }
+}
+
+.edu-employ {
+    opacity: .8;
+    background-color: var(--mian-color);
+    color: var(--text-color--light);
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 50px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+
+    @media all and (min-width: 550px) {
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 20px;
+    }
+
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    #contact-form {
+        width: min(500px, 80%);
+        background-color: var(--mian-color);
+        border-radius: 10px;
+        font-size: 16px;
+        opacity: .8;
+        padding: 40px;
+        color: var(--text-color--light);
+        margin: 0;
+    
+        textarea {
+            width: 100%;
+        }
+
+        button:hover {
+            color: #00A871;
+        }
+    }
+}
+
+footer {
+    opacity: .8;
+    color: var(--mian-color);
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+
+    a{
+        color: var(--mian-color);
+
+        &:visited {
+            color: var(--mian-color);
+        }
+
+        &:hover {
+            color: #00A871;
+        }
+    
+        &:active {
+            color: #00B5FF;
+        }
+    }
+
+    img {
+        max-width: 80px;
+    }
+}
