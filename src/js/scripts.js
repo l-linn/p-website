@@ -14,3 +14,15 @@ console.log(a);
 console.log(a.length);
 console.log(a[0]);
 console.log(a[7]);
+
+a.forEach(element => console.log(element))
+
+console.log(firstA.parentElement);
+console.log(firstA.nextElementSibling);
+console.log(firstA.previousElementSibling);
+console.log(firstA.firstElementChild);
+console.log(firstA.lastChild);
+console.log(firstA.childElementCount);
+
+let edu = document.querySelectorAll('.edu-employ__item > *');
+console.log(edu);
