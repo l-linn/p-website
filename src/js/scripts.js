@@ -27,12 +27,13 @@ console.log(firstA.childElementCount);
 let edu = document.querySelectorAll('.edu-employ__item > *');
 console.log(edu);
 
-//innerHTML - generally not recommended 
+//innerHTML - generally not recommended, better to create a new element then amend the new element rahter than rewriting exisiting HTML
 /*
 let title = document.querySelector('.profile-container h1');
 console.log(title);
 title.innerHTML = ('<strong>Creative Developer</strong>');
 */
+
 //add element
 let title = document.querySelector('.profile-container h1');
 console.log(title);
@@ -46,3 +47,20 @@ console.log(title);
 let parag = title.nextElementSibling;
 console.log(parag);
 parag.appendChild(title);
+
+//remove element
+let pRemove = parag.nextElementSibling;
+console.log(pRemove);
+pRemove.parentElement.removeChild(pRemove);//traverse up to select its parent element.
+
+//tag name
+console.log(title.tagName);// return DIV
+
+console.log(title.getAttribute('class'));
+title.setAttribute('class','type-animation');
+console.log(title.getAttribute('class')); //corrected a typo..and the css stays!
+
+//classList
+let footerClass = document.querySelector('footer div');
+console.log(footerClass.classList.contains(footerClass));//false
+footerClass.classList.add('footer-links');
