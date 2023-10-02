@@ -307,3 +307,8 @@ footer a:active {
 footer img {
   max-width: 80px;
 }
+
+
+.footer-links {
+  background-color: yellow;
+}
