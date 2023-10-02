@@ -26,3 +26,23 @@ console.log(firstA.childElementCount);
 
 let edu = document.querySelectorAll('.edu-employ__item > *');
 console.log(edu);
+
+//innerHTML - generally not recommended 
+/*
+let title = document.querySelector('.profile-container h1');
+console.log(title);
+title.innerHTML = ('<strong>Creative Developer</strong>');
+*/
+//add element
+let title = document.querySelector('.profile-container h1');
+console.log(title);
+let newLine = document.createElement('a');// tag naem
+newLine.innerHTML = " & Designer";
+title.appendChild(newLine);
+
+//move element
+title = document.querySelector('.typy-animation');
+console.log(title);
+let parag = title.nextElementSibling;
+console.log(parag);
+parag.appendChild(title);
