@@ -49,9 +49,9 @@ title.innerHTML = ('<strong>Creative Developer</strong>');
 // parag.appendChild(title);
 
 //remove element
-// let pRemove = parag.nextElementSibling;
-// console.log(pRemove);
-// pRemove.parentElement.removeChild(pRemove);//traverse up to select its parent element.
+let pRemove = parag.nextElementSibling;
+console.log(pRemove);
+pRemove.parentElement.removeChild(pRemove);//traverse up to select its parent element.
 
 //tag name
 // console.log(title.tagName);// return DIV
